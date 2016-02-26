@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="author" content="Vasili Ushakov">
+    <title>Василий Ушаков - о периметре</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="perimeter.js"></script>
+
+    <style>
+			* {
+				padding: 0;
+				marging: 0;
+			}
+
+      svg {
+        display: block;
+        margin: auto;
+        fill: #337AB7;
+      }
+
+      .rect {
+        margin: auto;
+      }
+
+      .jumbotron {
+        text-align: center;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse ">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">о периметре фигур</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">главная</a></li>
+            <li class="active" ><a href="perimeter.html">примеры вычисления периметра</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+<ol class="breadcrumb">
+  <li class="active"><span class="label label-primary">Василий Ушаков</span></li>
+</ol>
+
+<hr />
+
+<div class="jumbotron">
+	<div class="raw">
+		<h2>Периметр квадрата</h2>
+      <form name="square" class="form-inline">
+        <div class="col-md-6" class="form-group">
+          <label>длина стороны</label>
+					<input class="form-control" name="length" size="7" maxlength="15"  onFocus="select();" />
+        </div>
+
+        <div class="col-md-6" class="form-group">
+          <label >периметр</label>
+					<input class="form-control" name="result" SIZE="8" maxlength="24" >
+        </div>
+      </form>
+
+			<input class="btn btn-primary" type=Button value=Calculate onClick="calcsquare();">
+			<input class="btn btn-primary" type="reset" value="Clear" style="margin-left:1cm">
+			<br />	
+	</div>
+</div>
+
+<div class="jumbotron">
+	<div class="raw">
+		<h2>Периметр прямоугольника</h2>
+      <form name="rectangle" class="form-inline">
+        <div class="col-md-6" class="form-group">
+          <label>длина стороны a</label>
+					<input class="form-control" name="base" size="7" maxlength="15"  onFocus="select();"/>
+				</div>
+
+        <div class="col-md-6" class="form-group">
+          <label>длина стороны b</label>
+					<input class="form-control" name="height" size="7" maxlength="15"  onFocus="select();"/>
+        </div>
+
+			<input class="btn btn-primary"  type=Button value=Calculate onClick="calcrectangle();">
+			<input class="btn btn-primary"  type="reset" value="Clear" style="margin-left:1cm">
+			<br />
+			<br />
+			<input class="form-control" name="result" SIZE="8" maxlength="24" >
+      </form>
+</div>
+</div>
+
+	<br />	
+	<br />	
+	<br />	
+	<br />	
+	<br />	
+	<br />	
+	<br />	
+	<form name="triangle">
+	<A NAME="triangle"></A>
+	
+	 <p  align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate Perimeter of a Triangle</span></b></strong></font></p>
+	 
+	<p align="center">
+	<img  src="../images/perimeter_triangle.jpg" border="0" > </p>  
+	<p align="center">
+		<font size="2" face="verdana"
+        color="darkblue"><strong>Perimeter  =  a  +  b  +  c </strong></font></p>
+	<table align="center">
+		 
+		
+	
+                <td colspan="2"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5" colspan="2"></td></tr>
+	  
+		<tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (a):    </b></font>  </td>
+                   <td> <input name="lengtha" size="7" maxlength="15" />
+					
+          </td></tr>
+			  
+			  
+		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (b):  </b></font></td>
+                   <td>  <input type="text" name="lengthb"  size="7" maxlength="15">
+            </td></tr>
+			
+			<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (c):  </b></font></td>
+                   <td>  <input type="text" name="lengthc"  size="7" maxlength="15">
+            </td></tr>	
+			 
+			  
+          <tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+                  <td colspan="3" align="center"><input type=Button  onClick="calctriangle();" value=Calculate> 
+                    <input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Perimeter of a Triangle:  </b></font> </td>
+                  <td> <input type="text" name="result" SIZE="8" maxlength="24" >
+           </td></tr>
+		   
+		 
+		
+        </table>
+	</form>
+	<hr align="center" size="1" color="#339966" width="80%">
+	  <br>
+	
+	<form name="parallelogram">
+	<A NAME="parallelogram"></A>
+	
+	 <p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate Perimeter Of a Parallelogram</span></b></strong></font></p>
+	
+		<p align="center"><img src="../images/area_parallelogram.jpg"  border="0"></p>
+		<p align="center">
+		<font size="2" face="verdana"
+        color="darkblue"><strong>Perimeter  =  2 ( Base ) + 2 ( Height ) </strong></font></p>
+	<table align="center">
+		 
+	
+                <td colspan="3"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5" colspan="3"></td></tr>
+	   
+	    <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Base:  </b></font> </td>
+                  <td>  <input name="base"  size="7" maxlength="15"  onFocus="select();"/>
+             </td></tr>
+			  
+		
+			  
+		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Height: </b></font> </td>
+                   <td> <input type="text" name="height" onFocus="select();" size="7" maxlength="15" >
+             </td></tr>
+			
+			<tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+            <td colspan="3" align="center"><input type=Button value=Calculate onClick="calcparallelogram();">
+			<input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Perimeter Of a Parallelogram:  </b></font> </td>
+                <td>   <input name="result" SIZE="10" maxlength="24" > </td></tr>
+		   
+		 
+		
+        </table>
+	</form>
+	<hr align="center" size="1" color="#339966" width="80%">
+	<br> 
+	
+	<form name="rhombus">
+	<A NAME="rhombus"></A>
+	
+	 <p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate Perimeter Of a Rhombus</span></b></strong></font></p>
+	
+		<p align="center"><img src="../images/perimeter_rhombus.jpg"  border="0" ></p>
+		<p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong>Perimeter  =  4  x  Length  </strong></font></p>
+	<table align="center">
+	 <td colspan="3"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5" colspan="3"></td></tr>	 
+	 <tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length:   </b></font></td>
+                   <td>  <input name="length"  size="7" maxlength="15"  onFocus="select();"/>
+            </td></tr>
+		
+		<tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+            <td colspan="3" align="center"><input type=Button value=Calculate onClick="calcrhombus();">
+			<input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Perimeter Of a Rhombus:   </b></font></td>
+                 <td>   <input name="result" SIZE="10" maxlength="24" > </td></tr>
+		   
+		 
+		
+        </table>
+	</form><hr align="center" size="1" color="#339966" width="80%">
+	<br> 
+	
+	<form name="trapezium">
+	<A NAME="trapezium"></A>
+	
+	 <p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate  Perimeter Of a Trapezium</span></b></strong></font></p>
+	 
+		<p align="center"><img src="../images/perimeter_trapezoid.jpg"  border="0"></p>
+		<p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong>Perimeter  =  a  +  b  +  c  + d</strong></font></p>
+	<table align="center">
+		 
+	
+                <td colspan="3"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5" colspan="3"></td></tr>
+	   
+	   <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (a):  </b></font> </td>
+                  <td>  <input name="lengtha" size="7" maxlength="15"  onFocus="select();" />
+             </td></tr>
+			  
+		 <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (b):  </b></font> </td>
+                  <td>  <input name="lengthb" size="7" maxlength="15"  onFocus="select();" />
+             </td></tr>
+			 
+		 <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (c):  </b></font> </td>
+                  <td>  <input name="lengthc" size="7" maxlength="15"  onFocus="select();" />
+             </td></tr>
+			 
+		 <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length (d):  </b></font> </td>
+                  <td>  <input name="lengthd" size="7" maxlength="15"  onFocus="select();" />
+             </td></tr>
+			 
+		<tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+            <td colspan="3" align="center"><input type=Button value=Calculate onClick="calctrapezium();" >
+			<input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5" colspan="3"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm"> Perimeter Of a Trapezium:  </b></font> </td>
+                   <td> <input name="result" SIZE="10" maxlength="24" ></td></tr>
+		   
+		 
+		
+        </table>
+	</form>
+	<hr align="center" size="1" color="#339966" width="80%">
+	   <br> 
+	
+	 
+	
+	<form name="ellipse">
+	<A NAME="ellipse"></A>
+	
+	 <p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate Perimeter Of a Ellipse</span></b></strong></font></p>
+	
+	<p align="center"><img  src="../images/perimeter_ellipse.jpg" border="0"></p>
+	<p align="center"><img src="../images/pellipse.bmp" border="0" style="margin-top:.2cm"></p>
+	
+	<table align="center">
+		 
+	
+                <td colspan="3"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5"></td></tr>
+	   
+	   <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Radius (r<sub>1</sub>):   </b></font></td>
+                   <td>   <input name="radius1" size="7" maxlength="15"  onFocus="select();"/>
+					
+           </td></tr>
+			 
+			 <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Radius (r<sub>2</sub>):  </b></font> </td>
+                 <td>   <input name="radius2" size="7" maxlength="15"  onFocus="select();"/>
+					
+             </td></tr>
+			 
+		 
+          <tr><td height="5"></td></tr>
+			  
+		<tr>
+            <td colspan="3" align="center"><input type=Button value=Calculate onClick="calcellipse();">
+			<input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Perimeter Of a Ellipse:  </b></font> </td>
+                 <td>  <input name="result" SIZE="8" maxlength="24" ></td></tr>
+		   
+		 
+		
+        </table>
+	</form>
+	
+	<hr align="center" size="1" color="#339966" width="80%">
+	  <br>
+	
+	<form name="polygon">
+	<A NAME="polygon"></A>
+	
+	 <p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate Perimeter of Polygon</span></b></strong></font></p>
+	
+		<p align="center"><img src="../images/perimeter_polygon.jpg"  border="0" ></p>
+		<p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong>Perimeter  =  Number Of Sides  x  Length  </strong></font></p>
+	<table align="center">
+		 
+	
+                <td colspan="3"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5"></td></tr>
+	   
+	   <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Number Of Sides:    </b></font> </td>
+                   <td> <input name="number"  size="7" maxlength="15"  onFocus="select();"/>
+           </td></tr>
+			  
+		
+			  
+		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length:  </b></font> </td> 
+                  <td>  <input type="text" name="length" onFocus="select();" size="7" maxlength="15">
+            </td></tr>
+			
+			<tr><td height="5"></td></tr>
+			  
+		<tr>
+            <td colspan="3" align="center"><input type=Button value=Calculate onClick="calcpolygon();">
+			<input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm"> Perimeter of Polygon:   </b></font> </td>
+                <td>   <input name="result" SIZE="10" maxlength="24" ></td></tr>
+		   
+		 
+		
+        </table>
+	</form>
+	
+	
+	
+	</td>
+        </tr>
+		
+        <tr> 
+          <td> <table align="center">
+              <tr> 
+                <td> <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script> <script type="text/javascript">
+_uacct = "UA-3142811-8";
+urchinTracker();
+</script> </td>
+              </tr>
+            </table></td>
+        </tr>
+		<tr><td>
+		<table align="center"><tr>
+          <td align="center" valign="bottom"> <img src="../images/circle.jpg" border="0"> 
+            <font size="1" face="verdana" color="black"><a href="../links.htm" style="text-decoration:none; color:black"> 
+            LINKS</a></font></td>
+			<td width="15"></td>
+		<td align="center" valign="bottom">
+		<img src="../images/circle.jpg" border="0">
+		<font size="1" face="verdana" color="black"><a href="../disclaimer.htm" style="text-decoration:none; color:black">
+		DISCLAIMER</a></font></td>
+		<td width="15"></td>
+		<td align="center" valign="bottom">
+		<img src="../images/circle.jpg" border="0">
+		<font size="1" face="verdana" color="black"><a href="../contactus.htm" style="text-decoration:none; color:black">
+		CONTACT US</a></font></td></tr>
+      </table></td></tr>
+      </table>
+<table align="right">
+<tr><td>
+<table align="right" width="160" height="600">
+  <tr> 
+    <td valign="top">
+	<script type="text/javascript"><!--
+
+google_ad_client = "pub-0297548667908210";
+
+//160x600, created 1/29/08
+
+google_ad_slot = "7780696046";
+
+google_ad_width = 160;
+
+google_ad_height = 600;
+
+//--></script>
+
+
+	</td>
+  </tr>
+</table>
+</td></tr>
+
+	<tr><td>
+<table align="right" width="160" height="600">
+  <tr> 
+    <td valign="top">
+	<script type="text/javascript"><!--
+
+google_ad_client = "pub-0297548667908210";
+
+//160x600, created 1/29/08
+
+google_ad_slot = "7780696046";
+
+google_ad_width = 160;
+
+google_ad_height = 600;
+
+//--></script>
+
+
+</td>
+  </tr>
+</table>
+
+</td></tr></table>
+</td></tr>
+</table>
+	
+	</form>
+	
+	<hr align="center" size="1" color="#339966" width="80%">
+	  <br>
+	
+	<form name="polygon">
+	<A NAME="polygon"></A>
+	
+	 <p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong><b><span>Calculate Perimeter of Polygon</span></b></strong></font></p>
+	
+		<p align="center"><img src="../images/perimeter_polygon.jpg"  border="0" ></p>
+		<p align="center"><font size="2" face="verdana"
+        color="darkblue"><strong>Perimeter  =  Number Of Sides  x  Length  </strong></font></p>
+	<table align="center">
+		 
+	
+                <td colspan="3"><font size="2" face="verdana"
+        color="red"><strong><b style="margin-left:.5cm">Enter your values:</b></strong></font></td>
+      </tr>
+	   <tr><td height="5"></td></tr>
+	   
+	   <tr>
+		          <td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Number Of Sides:    </b></font> </td>
+                   <td> <input name="number"  size="7" maxlength="15"  onFocus="select();"/>
+           </td></tr>
+			  
+		
+			  
+		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm">Length:  </b></font> </td> 
+                  <td>  <input type="text" name="length" onFocus="select();" size="7" maxlength="15">
+            </td></tr>
+			
+			<tr><td height="5"></td></tr>
+			  
+		<tr>
+            <td colspan="3" align="center"><input type=Button value=Calculate onClick="calcpolygon();">
+			<input type="reset" value="Clear" style="margin-left:1cm"></td>
+      
+          </tr>
+		   <tr><td height="5"></td></tr>
+			  
+		<tr>
+		<td colspan="3"><font size="2" face="verdana"
+        color="red"><b style="margin-left:.5cm">Results:</b></font> 
+		</td></tr>
+		
+  		<tr><td><font size="2" face="verdana"
+        color="darkblue"><b style="margin-left:1cm"> Perimeter of Polygon:   </b></font> </td>
+                <td>   <input name="result" SIZE="10" maxlength="24" ></td></tr>
+		   
+		 
+		
+        </table>
+	</form>
+	
+	
+	
+	</td>
+        </tr>
+		
+        <tr> 
+          <td> <table align="center">
+              <tr> 
+                <td> <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script> <script type="text/javascript">
+_uacct = "UA-3142811-8";
+urchinTracker();
+</script> </td>
+              </tr>
+            </table></td>
+        </tr>
+		<tr><td>
+		<table align="center"><tr>
+          <td align="center" valign="bottom"> <img src="../images/circle.jpg" border="0"> 
+            <font size="1" face="verdana" color="black"><a href="../links.htm" style="text-decoration:none; color:black"> 
+            LINKS</a></font></td>
+			<td width="15"></td>
+		<td align="center" valign="bottom">
+		<img src="../images/circle.jpg" border="0">
+		<font size="1" face="verdana" color="black"><a href="../disclaimer.htm" style="text-decoration:none; color:black">
+		DISCLAIMER</a></font></td>
+		<td width="15"></td>
+		<td align="center" valign="bottom">
+		<img src="../images/circle.jpg" border="0">
+		<font size="1" face="verdana" color="black"><a href="../contactus.htm" style="text-decoration:none; color:black">
+		CONTACT US</a></font></td></tr>
+      </table></td></tr>
+      </table>
+<table align="right">
+<tr><td>
+<table align="right" width="160" height="600">
+  <tr> 
+    <td valign="top">
+	<script type="text/javascript"><!--
+
+google_ad_client = "pub-0297548667908210";
+
+//160x600, created 1/29/08
+
+google_ad_slot = "7780696046";
+
+google_ad_width = 160;
+
+google_ad_height = 600;
+
+//--></script>
+
+
+	</td>
+  </tr>
+</table>
+</td></tr>
+
+	<tr><td>
+<table align="right" width="160" height="600">
+  <tr> 
+    <td valign="top">
+	<script type="text/javascript"><!--
+
+google_ad_client = "pub-0297548667908210";
+
+//160x600, created 1/29/08
+
+google_ad_slot = "7780696046";
+
+google_ad_width = 160;
+
+google_ad_height = 600;
+
+//--></script>
+
+
+</td>
+  </tr>
+</table>
+
+</td></tr></table>
+</td></tr>
+</table>
+
+    </div>
+  <br />
+  <br />
+
+<!--
+<p id="demo"></p>
+<button onclick="buttonTest()">Click me</button>
+</div>
+-->
+
+    </div>
+
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<script>
+
+var width = $(".jumbotron").width();
+var height = 200;
+ 
+var holder = d3.select(".rectangle")
+      .append("svg")
+      .attr("width", width)    
+      .attr("height", height); 
+
+// draw a rectangle
+holder.append("rect")
+    .attr("x", 300)
+    .attr("y", 150)
+    .attr("height", 150) 
+    .attr("width", 200);
+
+// read a change in the height input
+d3.select("#nHeight").on("input", function() {
+  updateHeight(+this.value);
+});
+
+// read a change in the width input
+d3.select("#nWidth").on("input", function() {
+  updateWidth(+this.value);
+});
+
+// update the values
+updateHeight(200);
+updateWidth(300);
+
+// Update the height attributes
+function updateHeight(nHeight) {
+
+  // adjust the text on the range slider
+  d3.select("#nHeight-value").text(nHeight);
+  d3.select("#nHeight").property("value", nHeight);
+
+  // update the rectangle height
+  holder.selectAll("rect") 
+    .attr("y", 150-(nHeight/2)) 
+    .attr("height", nHeight); 
+}
+
+// Update the width attributes
+function updateWidth(nWidth) {
+
+  // adjust the text on the range slider
+  d3.select("#nWidth-value").text(nWidth);
+  d3.select("#nWidth").property("value", nWidth);
+
+  // update the rectangle width
+  holder.selectAll("rect")
+    .attr("x", ($(".jumbotron").width() - nWidth) / 2) 
+    .attr("width", nWidth);
+}
+
+var xxx = document.getElementsByTagName("rect")[0].getAttribute("height");
+console.log(xxx);
+var yyy = document.getElementsByTagName("rect")[0].getAttribute("width");
+console.log(yyy);
+xxx = parseInt(xxx);
+yyy = parseInt(yyy);
+
+xx=$("#nHeight-value").html()
+yy=$("#nWidth-value").html()
+xx = parseInt(xx);
+yy = parseInt(yy);
+
+function buttonTest() {
+	document.getElementById("demo").innerHTML = (xx + yy) * 2 ;
+}
+
+</script>
+  </body>
+</html>
